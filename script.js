@@ -15,10 +15,14 @@ const gameboard = (function () {
     const setSymbol = (index, symbol) => {
         if (index > grid.length) return;
         grid[index] = symbol; 
-        console.log(grid);
     }; 
+
+    const getSymbol = (index) => {
+        if (index > grid.length) return;
+        return grid[index]
+    }
     
-    return { setSymbol };
+    return { setSymbol, getSymbol };
 })();
 
 const displayGame = (function () {
@@ -29,6 +33,7 @@ const displayGame = (function () {
     divElements.forEach((div) => {
         div.addEventListener('click', (e) => {
             div.textContent = gameplay.playRound(parseInt(e.target.dataset.index));
+            updateGameDisplay();
         });
     });
 
@@ -38,6 +43,13 @@ const displayGame = (function () {
         }
     });
 
+    const updateGameDisplay = () => {
+        for (let i = 0; i < divElements.length; i++) {
+            divElements[i].textContent = gameboard.getSymbol(i);
+        }
+    }
+
+    return { updateGameDisplay };
 })();
 
 const gameplay = (function () {
