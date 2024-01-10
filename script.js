@@ -20,21 +20,22 @@ const gameboard = (function () {
     const getSymbol = (index) => {
         if (index > grid.length) return;
         return grid[index]
-    }
+    };
 
-    const restartGrid = () => {
+    const resetGrid = () => {
         for (let i = 0; i < grid.length; i++) {
             grid[i] = '';
         }
-    }
+    };
     
-    return { setSymbol, getSymbol, restartGrid };
+    return { setSymbol, getSymbol, resetGrid };
 })();
 
 const displayGame = (function () {
 
     const divElements = document.querySelectorAll('.grid-items');
     const restartBtn = document.querySelector('.restart');
+    // message document query selector
 
     divElements.forEach((div) => {
         div.addEventListener('click', (e) => {
@@ -45,7 +46,7 @@ const displayGame = (function () {
     });
 
     restartBtn.addEventListener('click', () => {
-        gameboard.restartGrid();
+        gameboard.resetGrid();
         updateGameDisplay();
     });
 
@@ -54,6 +55,8 @@ const displayGame = (function () {
             divElements[i].textContent = gameboard.getSymbol(i);
         }
     }
+
+    // MESSAGE
 
     return { updateGameDisplay };
 })();
@@ -67,12 +70,25 @@ const gameplay = (function () {
 
     const playRound = (index) => {
         gameboard.setSymbol(index, currentPlayer());
+        if (round > 4 && checkWinPattern(index)) {
+            // display a message to announce the winner
+            isOver = true;
+            return;
+        }
+        if (round === 9) {
+            // display a message to announce it's a draw
+            isOver = true;
+            return;
+        }
+        // announce the next player
         round++;
     }
 
     const currentPlayer = () => {
         return round % 2 === 0 ? playerO.getSymbol() : playerX.getSymbol();
     }
+
+    const checkWinPattern = () => {}
 
     return { playRound };
 })();
