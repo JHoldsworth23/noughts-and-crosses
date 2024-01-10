@@ -21,8 +21,14 @@ const gameboard = (function () {
         if (index > grid.length) return;
         return grid[index]
     }
+
+    const restartGrid = () => {
+        for (let i = 0; i < grid.length; i++) {
+            grid[i] = '';
+        }
+    }
     
-    return { setSymbol, getSymbol };
+    return { setSymbol, getSymbol, restartGrid };
 })();
 
 const displayGame = (function () {
@@ -38,9 +44,8 @@ const displayGame = (function () {
     });
 
     restartBtn.addEventListener('click', () => {
-        for (let i = 0; i < divElements.length; i++) {
-            divElements[i].textContent = '';
-        }
+        gameboard.restartGrid();
+        updateGameDisplay();
     });
 
     const updateGameDisplay = () => {
