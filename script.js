@@ -1,3 +1,13 @@
+const Player = (symbol) => {
+    this.symbol = symbol;
+
+    const getSymbol = () => {
+        return symbol;
+    }
+
+    return { getSymbol };
+}
+
 const displayGame = (function () {
 
     const divElements = document.querySelectorAll('.grid-items');
@@ -19,9 +29,10 @@ const displayGame = (function () {
 
 const gameplay = (function () {
     
-    const playerX = 'X';
-    const playerO = 'O';
+    const playerX = Player('X');
+    const playerO = Player('O');
     let round = 1;
     let isOver = false;
 
+    console.log(playerX.getSymbol());
 })();
