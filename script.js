@@ -8,14 +8,27 @@ const Player = (symbol) => {
     return { getSymbol };
 }
 
+const gameboard = (function () {
+
+    const grid = ['', '', '', '', '', '', '', '', ''];
+
+    const setSymbol = (index, symbol) => {
+        if (index > grid.length) return;
+        grid[index] = symbol; 
+        console.log(grid);
+    }; 
+    
+    return { setSymbol };
+})();
+
 const displayGame = (function () {
 
     const divElements = document.querySelectorAll('.grid-items');
     const restartBtn = document.querySelector('.restart');
 
     divElements.forEach((div) => {
-        div.addEventListener('click', () => {
-            div.textContent = 'X';
+        div.addEventListener('click', (e) => {
+            div.textContent = gameplay.playRound(parseInt(e.target.dataset.index));
         });
     });
 
@@ -34,5 +47,14 @@ const gameplay = (function () {
     let round = 1;
     let isOver = false;
 
-    console.log(playerX.getSymbol());
+    const playRound = (index) => {
+        gameboard.setSymbol(index, currentPlayer());
+        round++;
+    }
+
+    const currentPlayer = () => {
+        return round % 2 === 0 ? playerO.getSymbol() : playerX.getSymbol();
+    }
+
+    return { playRound };
 })();
