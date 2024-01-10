@@ -1,0 +1,12 @@
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    border: 4px solid crimson;
+    width: fit-content;
+}
+
+.grid-items {
+    width: 150px;
+    height: 150px;
+    border: 2px solid darkgray;
+}
