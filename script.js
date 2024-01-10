@@ -88,7 +88,27 @@ const gameplay = (function () {
         return round % 2 === 0 ? playerO.getSymbol() : playerX.getSymbol();
     }
 
-    const checkWinPattern = () => {}
+    const checkWinPattern = () => {
+        const winningPattern = [
+            [0, 1, 2],
+            [3, 4, 5],
+            [6, 7, 8],
+            [0, 3, 6],
+            [1, 4, 7],
+            [2, 5, 8],
+            [0, 4, 8],
+            [2, 4, 6]
+        ];
+    }
 
-    return { playRound };
+    const isGameOver = () => {
+        return isOver;
+    }
+
+    const resetGame = () => {
+        round = 1;
+        isOver = false;
+    }
+
+    return { playRound, isGameOver, resetGame };
 })();
