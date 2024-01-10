@@ -6,7 +6,11 @@
 }
 
 .grid-items {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 150px;
     height: 150px;
     border: 2px solid darkgray;
+    font-size: 5rem;
 }
