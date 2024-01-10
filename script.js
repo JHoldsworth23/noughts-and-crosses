@@ -38,6 +38,7 @@ const displayGame = (function () {
 
     divElements.forEach((div) => {
         div.addEventListener('click', (e) => {
+            if (e.target.textContent !== "") return;
             div.textContent = gameplay.playRound(parseInt(e.target.dataset.index));
             updateGameDisplay();
         });
