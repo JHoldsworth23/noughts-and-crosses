@@ -19,7 +19,7 @@ const gameboard = (function () {
 
     const getSymbol = (index) => {
         if (index > grid.length) return;
-        return grid[index]
+        return grid[index];
     };
 
     const resetGrid = () => {
@@ -47,6 +47,7 @@ const displayGame = (function () {
 
     restartBtn.addEventListener('click', () => {
         gameboard.resetGrid();
+        gameplay.resetGame();
         updateGameDisplay();
     });
 
@@ -88,8 +89,8 @@ const gameplay = (function () {
         return round % 2 === 0 ? playerO.getSymbol() : playerX.getSymbol();
     }
 
-    const checkWinPattern = () => {
-        const winningPattern = [
+    const checkWinPattern = (index) => {
+        const winningPatterns = [
             [0, 1, 2],
             [3, 4, 5],
             [6, 7, 8],
@@ -99,6 +100,10 @@ const gameplay = (function () {
             [0, 4, 8],
             [2, 4, 6]
         ];
+
+        return winningPatterns
+            .filter((combination) => combination.includes(index))
+            .some((possibleCombo) => possibleCombo.every((index) => gameboard.getSymbol(index) === currentPlayer()));
     }
 
     const isGameOver = () => {
