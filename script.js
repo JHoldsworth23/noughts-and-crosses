@@ -48,6 +48,7 @@ const displayGame = (function () {
     restartBtn.addEventListener('click', () => {
         gameboard.resetGrid();
         gameplay.resetGame();
+        displayMessage("Player X's turn");
         updateGameDisplay();
     });
 
@@ -61,7 +62,15 @@ const displayGame = (function () {
         message.textContent = text;
     }
 
-    return { displayMessage };
+    const displayResult = (winner) => {
+        if (winner === "draw") {
+            message.textContent = "It's a draw!";
+        } else {
+            message.textContent = `Player ${winner} has won!`;
+        }
+    }
+
+    return { displayMessage, displayResult };
 })();
 
 const gameplay = (function () {
@@ -74,12 +83,12 @@ const gameplay = (function () {
     const playRound = (index) => {
         gameboard.setSymbol(index, currentPlayer());
         if (round > 4 && checkWinPattern(index)) {
-            // display a message to announce the winner
+            displayGame.displayResult(currentPlayer());
             isOver = true;
             return;
         }
         if (round === 9) {
-            // display a message to announce it's a draw
+            displayGame.displayResult("draw");
             isOver = true;
             return;
         }
