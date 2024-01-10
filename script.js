@@ -16,3 +16,12 @@ const displayGame = (function () {
     });
 
 })();
+
+const gameplay = (function () {
+    
+    const playerX = 'X';
+    const playerO = 'O';
+    let round = 1;
+    let isOver = false;
+
+})();
