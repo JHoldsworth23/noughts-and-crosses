@@ -35,7 +35,7 @@ const displayGame = (function () {
 
     const divElements = document.querySelectorAll('.grid-items');
     const restartBtn = document.querySelector('.restart');
-    // message document query selector
+    const message = document.querySelector('.message');
 
     divElements.forEach((div) => {
         div.addEventListener('click', (e) => {
@@ -57,9 +57,11 @@ const displayGame = (function () {
         }
     }
 
-    // MESSAGE
+    const displayMessage = (text) => {
+        message.textContent = text;
+    }
 
-    return { updateGameDisplay };
+    return { displayMessage };
 })();
 
 const gameplay = (function () {
@@ -81,8 +83,8 @@ const gameplay = (function () {
             isOver = true;
             return;
         }
-        // announce the next player
         round++;
+        displayGame.displayMessage(`Player ${currentPlayer()}'s turn`);
     }
 
     const currentPlayer = () => {
