@@ -1,9 +1,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Heebo&family=Maven+Pro&display=swap');
 
+:root {
+    --primary-color: #1D1D1D;
+    --secondary-color: #FEFEFE;
+}
+
 body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
     font-family: 'Maven Pro', sans-serif;
-    color: #FEFEFE;
-    background-color: #1D1D1D;
+    color: var(--secondary-color);
+    background-color: var(--primary-color);
+    min-height: 100vh;
 }
 
 .grid-container {
@@ -19,8 +29,8 @@ body {
     align-items: center;
     width: 150px;
     height: 150px;
-    color: #1D1D1D;
-    background-color: #FEFEFE;
+    color: var(--primary-color);
+    background-color: var(--secondary-color);
     border: 0.5px solid rgb(169, 169, 169);
     font-family: 'Heebo', sans-serif;
     font-size: 5.5rem;
