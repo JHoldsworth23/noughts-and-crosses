@@ -49,10 +49,12 @@ h1:first-child {
     border: 0.5px solid rgb(169, 169, 169);
     font-family: 'Kanit', sans-serif;
     font-size: 7rem;
+    cursor: pointer;
 }
 
 button {
     background-color: #CAB5AD;
+    cursor: pointer;
 }
 
 button:hover {
