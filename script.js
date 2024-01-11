@@ -55,6 +55,7 @@ const displayGame = (function () {
     const updateGameDisplay = () => {
         for (let i = 0; i < divElements.length; i++) {
             divElements[i].textContent = gameboard.getSymbol(i);
+            divElements[i].style.color = gameboard.getSymbol(i) === 'X' ? '#DC143C' : '#008B8B';
         }
     }
 

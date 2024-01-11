@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Heebo&family=Maven+Pro&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Kanit&family=Maven+Pro&display=swap');
 
 :root {
     --primary-color: #1D1D1D;
@@ -45,11 +45,10 @@ h1:first-child {
     align-items: center;
     width: 150px;
     height: 150px;
-    color: var(--primary-color);
     background-color: var(--secondary-color);
     border: 0.5px solid rgb(169, 169, 169);
-    font-family: 'Heebo', sans-serif;
-    font-size: 5.5rem;
+    font-family: 'Kanit', sans-serif;
+    font-size: 7rem;
 }
 
 button {
