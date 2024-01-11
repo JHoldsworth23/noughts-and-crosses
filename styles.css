@@ -1,3 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Heebo&family=Maven+Pro&display=swap');
+
+body {
+    font-family: 'Maven Pro', sans-serif;
+}
+
 .grid-container {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -11,6 +17,7 @@
     align-items: center;
     width: 150px;
     height: 150px;
-    border: 2px solid darkgray;
+    border: 1px solid darkgray;
+    font-family: 'Heebo', sans-serif;
     font-size: 5rem;
 }
