@@ -28,7 +28,7 @@ h1:first-child {
 }
 
 .message {
-    margin-bottom: 0;
+    margin-bottom: 12px;
 }
 
 .grid-container {
