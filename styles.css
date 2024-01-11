@@ -19,7 +19,8 @@ body {
 .grid-container {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    border: 6px solid #D4A259;
+    border: 14px solid #D4A259;
+    border-radius: 14px;
     width: fit-content;
 }
 
