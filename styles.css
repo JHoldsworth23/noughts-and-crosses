@@ -8,12 +8,12 @@
 body {
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
+    justify-content: space-between;
     align-items: center;
     font-family: 'Maven Pro', sans-serif;
     color: var(--secondary-color);
     background-color: var(--primary-color);
-    min-height: 100vh;
+    min-height: 98vh;
 }
 
 .grid-container {
@@ -43,4 +43,11 @@ button {
 
 button:hover {
     background-color: #9A7E6C;
+}
+
+body > div:last-of-type {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1.25rem;
 }
