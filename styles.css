@@ -65,3 +65,8 @@ body > div:last-of-type {
     gap: 10px;
     font-size: 1rem;
 }
+
+i {
+    color: #D4A259;
+    font-size: 1.5rem;
+}
