@@ -25,6 +25,7 @@ body > div:first-of-type {
 h1:first-child {
     font-size: 4.5rem;
     text-align: center;
+    margin: 40px;
 }
 
 .message {
@@ -36,6 +37,7 @@ h1:first-child {
     grid-template-columns: repeat(3, 1fr);
     border: 14px solid #D4A259;
     border-radius: 14px;
+    margin: 16px;
     width: fit-content;
 }
 
