@@ -78,3 +78,7 @@ i {
     color: #D4A259;
     font-size: 1.5rem;
 }
+
+i:hover {
+    color: #DC143C;
+}
